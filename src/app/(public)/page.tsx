@@ -124,8 +124,8 @@ export default async function HomePage() {
               </p>
             </div>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
-              {services?.map((service, i) => (
-                <ServiceCard key={service.id} service={service} index={i} />
+              {services?.map((service) => (
+                <ServiceCard key={service.id} service={service} />
               ))}
             </div>
             {(!services || services.length === 0) && (

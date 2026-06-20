@@ -26,8 +26,6 @@ export interface Booking {
   services?: Service
 }
 
-export type BookingStatus = Booking["status"]
-
 export interface Review {
   id: string
   customer_name: string

@@ -11,7 +11,7 @@ const highlights: Record<string, string[]> = {
 
 const fallbackHighlights = ["Premium paint included", "Full prep work", "2-year warranty"]
 
-export default function ServiceCard({ service, index = 0 }: { service: Service; index?: number }) {
+export default function ServiceCard({ service }: { service: Service }) {
   const bullets = highlights[service.name] || fallbackHighlights
 
   return (
