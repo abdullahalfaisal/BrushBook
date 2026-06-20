@@ -45,10 +45,10 @@ export default function Navbar() {
         </button>
       </div>
       {open && (
-        <div className="fixed inset-0 z-50 sm:hidden">
-          <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-white shadow-xl">
-            <div className="flex items-center justify-between px-4 h-16 border-b border-stone-200/60">
+        <>
+          <div className="fixed inset-0 z-40 bg-black/40 sm:hidden" onClick={() => setOpen(false)} />
+          <div className="fixed right-0 top-0 z-50 h-full w-72 max-w-[80vw] bg-white shadow-xl sm:hidden">
+            <div className="flex items-center justify-between border-b border-stone-200/60 px-4 h-16">
               <span className="text-lg font-bold text-brand-dark">Menu</span>
               <button
                 onClick={() => setOpen(false)}
@@ -78,7 +78,7 @@ export default function Navbar() {
               </Link>
             </nav>
           </div>
-        </div>
+        </>
       )}
     </header>
   )
