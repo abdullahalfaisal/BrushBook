@@ -59,16 +59,16 @@ export default async function HomePage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/85 via-brand-mid/75 to-stone-900/85" />
-        <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 text-center">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 text-center">
           <h1 className="animate-fade-up text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
             Protect &amp; Beautify
             <br />
             <span className="text-shimmer">Your Home</span>
           </h1>
-          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-300" style={{ animationDelay: "0.1s" }}>
+          <p className="animate-fade-up mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-stone-300" style={{ animationDelay: "0.1s" }}>
             Professional interior and exterior painting. Premium Sherwin-Williams paint, meticulous prep, and a 2-year workmanship guarantee.
           </p>
-          <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.2s" }}>
+          <div className="animate-fade-up mt-8 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.2s" }}>
             <Link
               href="/book/interior-painting"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto animate-pulse-glow"
@@ -76,7 +76,7 @@ export default async function HomePage() {
               Get a Free Quote <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="animate-fade-up mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8" style={{ animationDelay: "0.3s" }}>
+          <div className="animate-fade-up mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8" style={{ animationDelay: "0.3s" }}>
             <div className="text-center">
               <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-brass">
                 <Home className="h-5 w-5" />
