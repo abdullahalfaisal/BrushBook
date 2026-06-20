@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-2 text-lg font-bold">
               <Paintbrush className="h-5 w-5 text-brass" />
-              <span>PaintBooking</span>
+              <span>BrushBook</span>
             </Link>
             <p className="mt-2 max-w-sm text-sm text-stone-400">
               Professional interior and exterior painting. Premium materials, meticulous prep, and a 2-year workmanship guarantee.
@@ -32,7 +32,7 @@ export default function Footer() {
             <Lock className="h-3 w-3" /> Admin
           </Link>
           <span className="mx-3">|</span>
-          &copy; {new Date().getFullYear()} PaintBooking. All rights reserved.
+          &copy; {new Date().getFullYear()} BrushBook. All rights reserved.
         </div>
       </div>
     </footer>

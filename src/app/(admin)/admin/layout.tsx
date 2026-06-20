@@ -1,7 +1,7 @@
 import AdminLayout from "@/components/AdminLayout"
 
 export const metadata = {
-  title: "Admin - PaintBooking",
+  title: "Admin - BrushBook",
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

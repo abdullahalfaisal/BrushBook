@@ -70,11 +70,11 @@ export async function PATCH(req: Request) {
         `If you have any questions, feel free to reply to this email or call us.`,
         ``,
         `Thanks,`,
-        `The PaintBooking Team`,
+        `The BrushBook Team`,
       ].join("\n")
 
       await resend.emails.send({
-        from: "PaintBooking <onboarding@resend.dev>",
+        from: "BrushBook <onboarding@resend.dev>",
         to: data.customer_email,
         subject: `Booking Confirmed: ${serviceName}`,
         text: emailBody,

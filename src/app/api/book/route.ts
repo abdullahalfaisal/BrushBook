@@ -80,7 +80,7 @@ export async function POST(req: Request) {
         .join("\n")
 
       await resend.emails.send({
-        from: "PaintBooking <onboarding@resend.dev>",
+        from: "BrushBook <onboarding@resend.dev>",
         to: process.env.OWNER_EMAIL,
         subject: `New Booking: ${customer_name} - ${service?.name || "Unknown"}`,
         text: emailBody,

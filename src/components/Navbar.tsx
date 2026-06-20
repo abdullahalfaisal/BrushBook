@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight text-brand-dark">
           <Paintbrush className="h-5 w-5 text-brass" />
-          <span>PaintBooking</span>
+          <span>BrushBook</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium text-stone-600 sm:flex">
           {navLinks.map((link) => (

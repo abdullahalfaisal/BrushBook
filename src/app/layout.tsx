@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PaintBooking - Professional Painting Services",
+  title: "BrushBook - Professional Painting Services",
   description: "Book professional painting services for your home or office. Easy online booking, free estimates.",
   icons: { icon: "/favicon.svg" },
 };
