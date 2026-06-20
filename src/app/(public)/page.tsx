@@ -102,7 +102,7 @@ export default async function HomePage() {
       </section>
 
       <AnimatedSection>
-        <section id="services" className="bg-white py-16">
+        <section id="services" className="bg-white py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
@@ -130,7 +130,7 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section id="portfolio" className="bg-cream py-16">
+        <section id="portfolio" className="bg-cream py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
@@ -153,7 +153,7 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section id="testimonials" className="bg-white py-16">
+        <section id="testimonials" className="bg-white py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
@@ -174,7 +174,7 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section id="why-us" className="bg-cream py-16">
+        <section id="why-us" className="bg-cream py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 shadow-sm">
@@ -204,7 +204,7 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section id="faq" className="bg-white py-16">
+        <section id="faq" className="bg-white py-20">
           <div className="mx-auto max-w-3xl px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
@@ -235,7 +235,7 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section className="bg-cream py-16">
+        <section className="bg-cream py-20">
           <div className="mx-auto max-w-6xl px-4 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
               Ready to Transform Your Space?
