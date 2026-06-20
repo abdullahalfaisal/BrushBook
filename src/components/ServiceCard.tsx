@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Clock } from "lucide-react"
+import PaintRollerIcon from "@/components/PaintRollerIcon"
 import type { Service } from "@/lib/types"
 
 const dotColors = ["bg-brass", "bg-sage", "bg-greige", "bg-sage-light", "bg-brand-mid", "bg-cyan-400"]
@@ -20,8 +21,8 @@ export default function ServiceCard({ service, index = 0 }: { service: Service; 
             className="object-cover transition duration-700 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full items-center justify-center font-serif text-5xl text-stone-300">
-            {service.name.charAt(0)}
+          <div className="flex h-full items-center justify-center">
+            <PaintRollerIcon className="h-16 w-16 text-stone-300" />
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />

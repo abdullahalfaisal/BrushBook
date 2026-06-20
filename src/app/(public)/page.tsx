@@ -4,6 +4,7 @@ import ServiceCard from "@/components/ServiceCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import Testimonials from "@/components/Testimonials"
 import GallerySection from "@/components/GallerySection"
+import PaintSplash from "@/components/PaintSplash"
 import { Shield, Star, Clock, ArrowRight, CheckCircle, ChevronDown } from "lucide-react"
 
 export const dynamic = "force-dynamic"
@@ -45,12 +46,15 @@ export default async function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-mid to-stone-800 text-white">
-        <div className="paint-blob animate-blob -left-20 -top-20 h-80 w-80 bg-sage" style={{ animationDelay: "-3s" }} />
-        <div className="paint-blob animate-blob -bottom-32 right-10 h-96 w-96 bg-brass" style={{ animationDelay: "-7s" }} />
-        <div className="paint-blob animate-blob left-1/3 top-1/4 h-64 w-64 bg-greige" style={{ animationDelay: "-11s" }} />
-        <div className="paint-blob animate-blob right-1/4 bottom-1/3 h-48 w-48 bg-sage-light" style={{ animationDelay: "-5s" }} />
-        <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-brass/10 blur-3xl animate-drift" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-brass/5 blur-3xl animate-drift" style={{ animationDelay: "-4s" }} />
+        <div className="pointer-events-none absolute -left-10 top-10 opacity-40 animate-drift">
+          <PaintSplash color="sage" type="splash" className="h-64 w-64" />
+        </div>
+        <div className="pointer-events-none absolute -bottom-10 right-10 opacity-30 animate-drift" style={{ animationDelay: "-4s" }}>
+          <PaintSplash color="brass" type="drops" className="h-48 w-48" />
+        </div>
+        <div className="pointer-events-none absolute left-1/3 top-1/4 opacity-20 animate-drift" style={{ animationDelay: "-8s" }}>
+          <PaintSplash color="greige" type="splash" className="h-40 w-40" />
+        </div>
         <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 text-center sm:pt-24">
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-brass backdrop-blur-sm">
@@ -114,7 +118,7 @@ export default async function HomePage() {
                 Expert painting and decorating services tailored to your property
               </p>
             </div>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
               {services?.map((service, i) => (
                 <ServiceCard key={service.id} service={service} index={i} />
               ))}
