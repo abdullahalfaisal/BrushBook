@@ -238,14 +238,18 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-mid to-stone-700 py-16 text-white">
-          <div className="pointer-events-none absolute -left-40 top-0 h-80 w-80 rounded-full bg-brass/5 blur-3xl" />
-          <div className="pointer-events-none absolute right-20 bottom-10 h-4 w-4 rounded-full bg-brass/20 blur-sm" />
+        <section className="relative overflow-hidden bg-cream py-16">
+          <div className="pointer-events-none absolute -left-10 top-10 opacity-30">
+            <PaintSplash color="brass" type="stroke" className="h-32 w-64" />
+          </div>
+          <div className="pointer-events-none absolute -right-10 bottom-10 opacity-20">
+            <PaintSplash color="sage" type="drops" className="h-24 w-48" />
+          </div>
           <div className="mx-auto max-w-6xl px-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
               Ready to Transform Your Space?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-stone-400">
+            <p className="mx-auto mt-4 max-w-xl text-stone-500">
               Book a free consultation with our team. No obligation, just expert advice.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -257,7 +261,7 @@ export default async function HomePage() {
               </Link>
               <Link
                 href="#services"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-3.5 text-sm font-medium transition hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-8 py-3.5 text-sm font-medium text-stone-600 transition hover:bg-stone-100"
               >
                 Browse Services
               </Link>
