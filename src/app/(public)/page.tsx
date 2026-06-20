@@ -43,6 +43,11 @@ export default async function HomePage() {
     .eq("is_active", true)
     .order("name")
 
+  const [{ count: reviewCount }, { count: galleryCount }] = await Promise.all([
+    supabase.from("reviews").select("*", { count: "exact", head: true }).eq("is_visible", true),
+    supabase.from("gallery").select("*", { count: "exact", head: true }).eq("is_visible", true),
+  ])
+
   return (
     <>
       <section className="hero-noise relative flex min-h-[90vh] items-center overflow-hidden text-white">
@@ -138,49 +143,53 @@ export default async function HomePage() {
         </section>
       </AnimatedSection>
 
-      <AnimatedSection>
-        <section id="portfolio" className="bg-cream py-20">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="grid items-center gap-12 lg:grid-cols-2">
-              <div>
-                <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 shadow-sm">
-                  Our Work
-                </span>
-                <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
-                  Recent Projects
-                </h2>
-                <p className="mt-3 text-stone-500">
-                  Browse our portfolio of completed projects. From cozy living rooms to commercial spaces, see the quality our team delivers.
-                </p>
+      {galleryCount && galleryCount > 0 && (
+        <AnimatedSection>
+          <section id="portfolio" className="bg-cream py-20">
+            <div className="mx-auto max-w-6xl px-4">
+              <div className="grid items-center gap-12 lg:grid-cols-2">
+                <div>
+                  <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 shadow-sm">
+                    Our Work
+                  </span>
+                  <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+                    Recent Projects
+                  </h2>
+                  <p className="mt-3 text-stone-500">
+                    Browse our portfolio of completed projects. From cozy living rooms to commercial spaces, see the quality our team delivers.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8">
+                <GallerySection />
               </div>
             </div>
-            <div className="mt-8">
-              <GallerySection />
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
+          </section>
+        </AnimatedSection>
+      )}
 
-      <AnimatedSection>
-        <section id="testimonials" className="bg-white py-20">
-          <div className="mx-auto max-w-6xl px-4">
-            <div className="text-center">
-              <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
-                Testimonials
-              </span>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
-                What Our Customers Say
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl text-stone-500">
-                Real feedback from homeowners, designers, and businesses who trusted us with their spaces.
-              </p>
+      {reviewCount && reviewCount > 0 && (
+        <AnimatedSection>
+          <section id="testimonials" className="bg-white py-20">
+            <div className="mx-auto max-w-6xl px-4">
+              <div className="text-center">
+                <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
+                  Testimonials
+                </span>
+                <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+                  What Our Customers Say
+                </h2>
+                <p className="mx-auto mt-3 max-w-xl text-stone-500">
+                  Real feedback from homeowners, designers, and businesses who trusted us with their spaces.
+                </p>
+              </div>
+              <div className="mt-8">
+                <Testimonials />
+              </div>
             </div>
-            <div className="mt-8">
-              <Testimonials />
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
+          </section>
+        </AnimatedSection>
+      )}
 
       <AnimatedSection>
         <section id="why-us" className="bg-cream py-20">
