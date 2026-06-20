@@ -72,7 +72,7 @@ export default async function HomePage() {
           <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.3s" }}>
             <Link
               href="/book/interior-painting"
-              className="inline-flex items-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
             </Link>
@@ -83,7 +83,7 @@ export default async function HomePage() {
               View Our Services
             </Link>
           </div>
-          <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-8 text-sm" style={{ animationDelay: "0.4s" }}>
+          <div className="animate-fade-up mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8" style={{ animationDelay: "0.4s" }}>
             <div className="text-center">
               <div className="text-2xl font-bold text-brass">500+</div>
               <div className="text-stone-400">Homes Painted</div>

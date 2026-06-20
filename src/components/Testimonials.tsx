@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef, useCallback } from "react"
 import Image from "next/image"
 import { Star, Quote } from "lucide-react"
 import type { Review } from "@/lib/types"
@@ -8,6 +8,8 @@ import type { Review } from "@/lib/types"
 export default function Testimonials() {
   const [reviews, setReviews] = useState<Review[]>([])
   const [active, setActive] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
     async function load() {
@@ -19,20 +21,28 @@ export default function Testimonials() {
     load()
   }, [])
 
-  useEffect(() => {
-    if (reviews.length < 2) return
-    const timer = setInterval(() => {
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current)
+    timerRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % reviews.length)
     }, 5000)
-    return () => clearInterval(timer)
   }, [reviews.length])
+
+  useEffect(() => {
+    if (reviews.length < 2 || paused) return
+    startTimer()
+    return () => { if (timerRef.current) clearInterval(timerRef.current) }
+  }, [reviews.length, paused, startTimer])
 
   if (reviews.length === 0) return null
 
   const review = reviews[active]
 
   return (
-    <div>
+    <div
+      onMouseEnter={() => { setPaused(true); if (timerRef.current) clearInterval(timerRef.current) }}
+      onMouseLeave={() => { setPaused(false) }}
+    >
       <div className="relative mx-auto max-w-2xl text-center">
         <Quote className="mx-auto h-8 w-8 text-brass/30" />
         <p className="mt-4 text-lg leading-relaxed text-stone-600 italic">
