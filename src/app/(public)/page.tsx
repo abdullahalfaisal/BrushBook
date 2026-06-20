@@ -4,6 +4,7 @@ import ServiceCard from "@/components/ServiceCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import Testimonials from "@/components/Testimonials"
 import GallerySection from "@/components/GallerySection"
+import PaintSplash from "@/components/PaintSplash"
 import { Shield, Star, Clock, ArrowRight, CheckCircle, ChevronDown } from "lucide-react"
 
 export const dynamic = "force-dynamic"
@@ -46,17 +47,13 @@ export default async function HomePage() {
     <>
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-mid to-stone-800 text-white">
         <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 text-center sm:pt-24">
-          <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-brass backdrop-blur-sm">
-              <CheckCircle className="h-3.5 w-3.5" /> Serving Portland & Surrounding Areas
-            </span>
-          </div>
-          <h1 className="animate-fade-up mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl" style={{ animationDelay: "0.1s" }}>
+          <h1 className="animate-fade-up mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Protect &amp; Beautify
             <br />
             <span className="text-shimmer">Your Home</span>
           </h1>
-          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-400" style={{ animationDelay: "0.2s" }}>
+          <PaintSplash color="brass" type="stroke" className="mx-auto mt-2 h-6 w-48 opacity-30" />
+          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-400" style={{ animationDelay: "0.1s" }}>
             Professional interior and exterior painting. Premium Sherwin-Williams paint, meticulous prep, and a 2-year workmanship guarantee.
           </p>
           <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.3s" }}>
