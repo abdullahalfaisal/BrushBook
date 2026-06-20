@@ -46,36 +46,34 @@ export default async function HomePage() {
     <>
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-mid to-stone-800 text-white">
         <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 text-center sm:pt-24">
-          <h1 className="animate-fade-up text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          <div className="animate-fade-up">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-brass backdrop-blur-sm">
+              <CheckCircle className="h-3.5 w-3.5" /> Serving Portland & Surrounding Areas
+            </span>
+          </div>
+          <h1 className="animate-fade-up mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl" style={{ animationDelay: "0.1s" }}>
             Protect &amp; Beautify
             <br />
             <span className="text-shimmer">Your Home</span>
           </h1>
-          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-400" style={{ animationDelay: "0.1s" }}>
+          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-400" style={{ animationDelay: "0.2s" }}>
             Professional interior and exterior painting. Premium Sherwin-Williams paint, meticulous prep, and a 2-year workmanship guarantee.
           </p>
-          <div className="animate-fade-up mt-8 flex flex-col items-center gap-3" style={{ animationDelay: "0.2s" }}>
+          <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.3s" }}>
             <Link
               href="/book/interior-painting"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-10 py-4 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
             </Link>
-            <div className="flex items-center gap-1.5 text-sm text-stone-400">
-              <div className="flex gap-0.5">
-                {[1,2,3,4,5].map((i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-greige text-greige" />
-                ))}
-              </div>
-              <span>4.9/5 from 200+ homeowners</span>
-            </div>
+            <Link
+              href="#services"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-3.5 text-sm font-medium text-white transition hover:bg-white/10"
+            >
+              View Our Services
+            </Link>
           </div>
-          <div className="animate-fade-up mx-auto mt-6 flex max-w-md flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-stone-500" style={{ animationDelay: "0.3s" }}>
-            <span className="flex items-center gap-1"><CheckCircle className="h-3 w-3 text-brass" /> Licensed &amp; Insured</span>
-            <span className="flex items-center gap-1"><CheckCircle className="h-3 w-3 text-brass" /> Free Quotes</span>
-            <span className="flex items-center gap-1"><CheckCircle className="h-3 w-3 text-brass" /> Cash on Completion</span>
-          </div>
-          <div className="animate-fade-up mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8" style={{ animationDelay: "0.4s" }}>
+          <div className="animate-fade-up mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8" style={{ animationDelay: "0.4s" }}>
             <div className="text-center">
               <div className="text-2xl font-bold text-brass">500+</div>
               <div className="text-stone-400">Homes Painted</div>
@@ -97,17 +95,17 @@ export default async function HomePage() {
       </section>
 
       <AnimatedSection>
-        <section id="services" className="bg-white py-20">
+        <section id="services" className="bg-white py-16">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
-                What We Do
+                Craftsmanship
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
-                Painting Services
+                Our Services
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-stone-500">
-                From single rooms to full exteriors — we handle every surface with care.
+                Expert painting and decorating services tailored to your property
               </p>
             </div>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
@@ -125,18 +123,18 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section id="portfolio" className="bg-cream py-20">
+        <section id="portfolio" className="bg-cream py-16">
           <div className="mx-auto max-w-6xl px-4">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
                 <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 shadow-sm">
-                  See Our Work
+                  Our Work
                 </span>
                 <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
                   Recent Projects
                 </h2>
                 <p className="mt-3 text-stone-500">
-                  Browse our portfolio of completed projects. From cozy living rooms to commercial spaces — see the quality our team delivers.
+                  Browse our portfolio of completed projects. From cozy living rooms to commercial spaces, see the quality our team delivers.
                 </p>
               </div>
             </div>
@@ -148,14 +146,14 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section id="testimonials" className="bg-white py-20">
+        <section id="testimonials" className="bg-white py-16">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
-                Happy Customers
+                Testimonials
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
-                Don&rsquo;t Take Our Word For It
+                What Our Customers Say
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-stone-500">
                 Real feedback from homeowners, designers, and businesses who trusted us with their spaces.
@@ -169,14 +167,14 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section id="why-us" className="bg-cream py-20">
+        <section id="why-us" className="bg-cream py-16">
           <div className="mx-auto max-w-6xl px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 shadow-sm">
-                Why Us
+                Why Choose Us
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
-                Built on Trust
+                Quality & Care
               </h2>
             </div>
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
@@ -199,14 +197,14 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section id="faq" className="bg-white py-20">
+        <section id="faq" className="bg-white py-16">
           <div className="mx-auto max-w-3xl px-4">
             <div className="text-center">
               <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
-                Questions?
+                FAQ
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
-                Answers
+                Common Questions
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-stone-500">
                 Everything you need to know before your free consultation.
@@ -230,13 +228,13 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section className="bg-cream py-20">
+        <section className="bg-cream py-16">
           <div className="mx-auto max-w-6xl px-4 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
               Ready to Transform Your Space?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-stone-500">
-              Get a free, no-obligation quote. We&rsquo;ll walk your space, answer your questions, and give you a fixed price — usually within 24 hours.
+              Book a free consultation with our team. No obligation, just expert advice.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
@@ -244,6 +242,12 @@ export default async function HomePage() {
                 className="inline-flex items-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl"
               >
                 Get Started <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="#services"
+                className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-8 py-3.5 text-sm font-medium text-stone-600 transition hover:bg-stone-100"
+              >
+                Browse Services
               </Link>
             </div>
           </div>
