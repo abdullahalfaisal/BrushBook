@@ -45,21 +45,39 @@ export default function Navbar() {
         </button>
       </div>
       {open && (
-        <div className="border-t border-stone-200/60 bg-white/95 px-4 pb-4 pt-2 sm:hidden">
-          <nav className="flex flex-col gap-3 text-sm font-medium text-stone-600">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
-                {link.label}
+        <div className="fixed inset-0 z-50 sm:hidden">
+          <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
+          <div className="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-white shadow-xl">
+            <div className="flex items-center justify-between px-4 h-16 border-b border-stone-200/60">
+              <span className="text-lg font-bold text-brand-dark">Menu</span>
+              <button
+                onClick={() => setOpen(false)}
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 rounded-lg p-1"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <nav className="flex flex-col gap-1 px-4 pt-4 text-sm font-medium text-stone-600">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-3 py-2.5 transition hover:bg-stone-100"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/book/interior-painting"
+                onClick={() => setOpen(false)}
+                className="mt-3 rounded-full bg-brass px-4 py-2.5 text-center text-sm font-semibold text-white"
+              >
+                Book Now
               </Link>
-            ))}
-            <Link
-              href="/book/interior-painting"
-              onClick={() => setOpen(false)}
-              className="rounded-full bg-brass px-4 py-2 text-center text-sm font-semibold text-white"
-            >
-              Book Now
-            </Link>
-          </nav>
+            </nav>
+          </div>
         </div>
       )}
     </header>
