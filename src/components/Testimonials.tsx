@@ -43,8 +43,8 @@ export default function Testimonials() {
       onMouseEnter={() => { setPaused(true); if (timerRef.current) clearInterval(timerRef.current) }}
       onMouseLeave={() => { setPaused(false) }}
     >
-      <div className="relative mx-auto max-w-2xl text-center">
-        <Quote className="mx-auto h-8 w-8 text-brass/30" />
+      <div className="relative mx-auto max-w-2xl rounded-2xl border border-stone-200/60 bg-white p-8 shadow-sm text-center">
+        <Quote className="mx-auto h-8 w-8 text-brass/20" />
         <p className="mt-4 text-lg leading-relaxed text-stone-600 italic">
           &ldquo;{review.content}&rdquo;
         </p>
@@ -59,14 +59,18 @@ export default function Testimonials() {
           ))}
         </div>
         <div className="mt-6 flex items-center justify-center gap-3">
-          {review.avatar_url && (
-            <div className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-cream">
+          {review.avatar_url ? (
+            <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-brass/30">
               <Image
                 src={review.avatar_url}
                 alt={review.customer_name}
                 fill
                 className="object-cover"
               />
+            </div>
+          ) : (
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brass/10 text-sm font-bold text-brass">
+              {review.customer_name.charAt(0)}
             </div>
           )}
           <div className="text-left">
