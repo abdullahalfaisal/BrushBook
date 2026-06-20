@@ -4,7 +4,6 @@ import ServiceCard from "@/components/ServiceCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import Testimonials from "@/components/Testimonials"
 import GallerySection from "@/components/GallerySection"
-import PaintSplash from "@/components/PaintSplash"
 import { Shield, Star, Clock, ArrowRight, CheckCircle, ChevronDown } from "lucide-react"
 
 export const dynamic = "force-dynamic"
@@ -46,15 +45,6 @@ export default async function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-mid to-stone-800 text-white">
-        <div className="pointer-events-none absolute -left-10 top-10 opacity-40 animate-drift">
-          <PaintSplash color="sage" type="splash" className="h-64 w-64" />
-        </div>
-        <div className="pointer-events-none absolute -bottom-10 right-10 opacity-30 animate-drift" style={{ animationDelay: "-4s" }}>
-          <PaintSplash color="brass" type="drops" className="h-48 w-48" />
-        </div>
-        <div className="pointer-events-none absolute left-1/3 top-1/4 opacity-20 animate-drift" style={{ animationDelay: "-8s" }}>
-          <PaintSplash color="greige" type="splash" className="h-40 w-40" />
-        </div>
         <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 text-center sm:pt-24">
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-brass backdrop-blur-sm">
@@ -238,13 +228,7 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <section className="relative overflow-hidden bg-cream py-16">
-          <div className="pointer-events-none absolute -left-10 top-10 opacity-30">
-            <PaintSplash color="brass" type="stroke" className="h-32 w-64" />
-          </div>
-          <div className="pointer-events-none absolute -right-10 bottom-10 opacity-20">
-            <PaintSplash color="sage" type="drops" className="h-24 w-48" />
-          </div>
+        <section className="bg-cream py-16">
           <div className="mx-auto max-w-6xl px-4 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
               Ready to Transform Your Space?
