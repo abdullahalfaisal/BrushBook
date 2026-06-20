@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Paintbrush, Phone } from "lucide-react"
+import { Menu, X, Paintbrush } from "lucide-react"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -29,15 +29,8 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="tel:+15551234567"
-            className="flex items-center gap-1.5 text-xs text-stone-400 transition hover:text-brand-dark"
-          >
-            <Phone className="h-3 w-3" />
-            (555) 123-4567
-          </a>
           <Link
-            href="/#services"
+            href="/book/interior-painting"
             className="rounded-full bg-brass px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-600 hover:shadow-md"
           >
             Book Now
@@ -59,16 +52,8 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="tel:+15551234567"
-              onClick={() => setOpen(false)}
-              className="flex items-center gap-1.5 text-xs text-stone-400"
-            >
-              <Phone className="h-3 w-3" />
-              (555) 123-4567
-            </a>
             <Link
-              href="/#services"
+              href="/book/interior-painting"
               onClick={() => setOpen(false)}
               className="rounded-full bg-brass px-4 py-2 text-center text-sm font-semibold text-white"
             >

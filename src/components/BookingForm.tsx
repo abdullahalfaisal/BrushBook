@@ -9,11 +9,8 @@ interface FieldErrors {
   name?: string
   email?: string
   phone?: string
-  city?: string
   address?: string
-  postal_code?: string
   date?: string
-  time?: string
 }
 
 export default function BookingForm({ service }: { service: Service }) {
@@ -27,20 +24,14 @@ export default function BookingForm({ service }: { service: Service }) {
     const name = form.get("name") as string
     const email = form.get("email") as string
     const phone = form.get("phone") as string
-    const city = form.get("city") as string
     const address = form.get("address") as string
-    const postal = form.get("postal_code") as string
     const date = form.get("date") as string
-    const time = form.get("time") as string
 
     if (!name || name.trim().length < 2) errors.name = "Please enter your full name"
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "Please enter a valid email"
     if (!phone || !/^[\d\s\-+()]{7,}$/.test(phone)) errors.phone = "Please enter a valid phone number"
-    if (!city || city.trim().length < 2) errors.city = "Please enter your city"
     if (!address || address.trim().length < 5) errors.address = "Please enter your full address"
-    if (!postal || postal.trim().length < 3) errors.postal_code = "Please enter your postal code"
     if (!date) errors.date = "Please select a preferred date"
-    if (!time) errors.time = "Please select a preferred time"
     if (date && new Date(date) < new Date(new Date().toDateString())) errors.date = "Date must be in the future"
 
     return errors
@@ -117,42 +108,42 @@ export default function BookingForm({ service }: { service: Service }) {
           <label htmlFor="name" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
             <User className="h-3.5 w-3.5 text-stone-400" /> Full Name *
           </label>
-          <input id="name" name="name" className={inputClass("name")} />
+          <input id="name" name="name" autoComplete="name" className={inputClass("name")} />
           {fieldErrors.name && <p className="mt-1 text-xs text-red-500">{fieldErrors.name}</p>}
         </div>
         <div>
           <label htmlFor="email" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
             <Mail className="h-3.5 w-3.5 text-stone-400" /> Email *
           </label>
-          <input id="email" name="email" type="email" className={inputClass("email")} />
+          <input id="email" name="email" type="email" autoComplete="email" className={inputClass("email")} />
           {fieldErrors.email && <p className="mt-1 text-xs text-red-500">{fieldErrors.email}</p>}
         </div>
         <div>
           <label htmlFor="phone" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
             <Phone className="h-3.5 w-3.5 text-stone-400" /> Phone *
           </label>
-          <input id="phone" name="phone" type="tel" className={inputClass("phone")} />
+          <input id="phone" name="phone" type="tel" autoComplete="tel" className={inputClass("phone")} />
           {fieldErrors.phone && <p className="mt-1 text-xs text-red-500">{fieldErrors.phone}</p>}
         </div>
         <div>
           <label htmlFor="city" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
-            <MapPin className="h-3.5 w-3.5 text-stone-400" /> City *
+            <MapPin className="h-3.5 w-3.5 text-stone-400" /> City
           </label>
-          <input id="city" name="city" className={inputClass("city")} />
+          <input id="city" name="city" autoComplete="address-level2" className={inputClass("city")} />
           {fieldErrors.city && <p className="mt-1 text-xs text-red-500">{fieldErrors.city}</p>}
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="address" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
             <MapPin className="h-3.5 w-3.5 text-stone-400" /> Address *
           </label>
-          <input id="address" name="address" className={inputClass("address")} />
+          <input id="address" name="address" autoComplete="street-address" className={inputClass("address")} />
           {fieldErrors.address && <p className="mt-1 text-xs text-red-500">{fieldErrors.address}</p>}
         </div>
         <div>
           <label htmlFor="postal_code" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
-            <MapPin className="h-3.5 w-3.5 text-stone-400" /> Postal Code *
+            <MapPin className="h-3.5 w-3.5 text-stone-400" /> Postal Code
           </label>
-          <input id="postal_code" name="postal_code" className={inputClass("postal_code")} />
+          <input id="postal_code" name="postal_code" autoComplete="postal-code" className={inputClass("postal_code")} />
           {fieldErrors.postal_code && <p className="mt-1 text-xs text-red-500">{fieldErrors.postal_code}</p>}
         </div>
         <div>
@@ -164,7 +155,7 @@ export default function BookingForm({ service }: { service: Service }) {
         </div>
         <div>
           <label htmlFor="time" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
-            <Clock className="h-3.5 w-3.5 text-stone-400" /> Preferred Time *
+            <Clock className="h-3.5 w-3.5 text-stone-400" /> Preferred Time
           </label>
           <input id="time" name="time" type="time" className={inputClass("time")} />
           {fieldErrors.time && <p className="mt-1 text-xs text-red-500">{fieldErrors.time}</p>}
@@ -175,7 +166,7 @@ export default function BookingForm({ service }: { service: Service }) {
         <label htmlFor="message" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
           <MessageSquare className="h-3.5 w-3.5 text-stone-400" /> Additional Message
         </label>
-        <textarea id="message" name="message" rows={3} className={inputClass("name")} />
+        <textarea id="message" name="message" rows={3} className="mt-1.5 block w-full rounded-lg border border-stone-200 px-4 py-2.5 text-sm transition focus:border-brass focus:outline-none focus:ring-2 focus:ring-brass/30" />
       </div>
 
       <div className="rounded-lg border border-stone-200 bg-cream p-5">
