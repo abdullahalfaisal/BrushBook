@@ -19,6 +19,7 @@ export default function AdminDashboardPage() {
   const [error, setError] = useState("")
   const [filter, setFilter] = useState<string>("all")
   const [notif, setNotif] = useState<string | null>(null)
+  const [toast, setToast] = useState<{ message: string; undo: () => void } | null>(null)
   const prevCount = useRef(0)
   const hasLoaded = useRef(false)
 
@@ -65,6 +66,9 @@ export default function AdminDashboardPage() {
 
   async function updateStatus(id: string, status: string) {
     const token = sessionStorage.getItem("admin_token")
+    const prevBooking = bookings.find((b) => b.id === id)
+    const prevStatus = prevBooking?.status
+
     const res = await fetch(`/api/admin/bookings`, {
       method: "PATCH",
       headers: {
@@ -77,6 +81,31 @@ export default function AdminDashboardPage() {
       setBookings((prev) =>
         prev.map((b) => (b.id === id ? { ...b, status: status as Booking["status"] } : b))
       )
+      setToast({
+        message: `Status changed to ${status}`,
+        undo: async () => {
+          if (!prevStatus) return
+          await fetch(`/api/admin/bookings`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ id, status: prevStatus }),
+          })
+          setBookings((prev) =>
+            prev.map((b) => (b.id === id ? { ...b, status: prevStatus } : b))
+          )
+          setToast(null)
+        },
+      })
+      setTimeout(() => setToast(null), 5000)
+    }
+  }
+
+  function handleCancel(id: string) {
+    if (window.confirm("Are you sure you want to cancel this booking?")) {
+      updateStatus(id, "cancelled")
     }
   }
 
@@ -107,6 +136,19 @@ export default function AdminDashboardPage() {
           <Bell className="h-5 w-5 shrink-0 text-brass" />
           <span className="flex-1">{notif}</span>
           <button onClick={() => setNotif(null)} className="text-stone-400 hover:text-stone-600">&times;</button>
+        </div>
+      )}
+
+      {toast && (
+        <div className="mb-4 flex items-center gap-3 rounded-lg border border-stone-200 bg-white p-4 text-sm font-medium text-brand-dark shadow-sm">
+          <span className="flex-1">{toast.message}</span>
+          <button
+            onClick={() => { toast.undo(); setToast(null) }}
+            className="rounded-lg bg-brand-dark px-3 py-1 text-xs font-medium text-brass transition hover:bg-stone-800"
+          >
+            Undo
+          </button>
+          <button onClick={() => setToast(null)} className="text-stone-400 hover:text-stone-600">&times;</button>
         </div>
       )}
 
@@ -208,7 +250,7 @@ export default function AdminDashboardPage() {
                       Confirm
                     </button>
                     <button
-                      onClick={() => updateStatus(booking.id, "cancelled")}
+                      onClick={() => handleCancel(booking.id)}
                       className="rounded-lg border border-red-200 px-4 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-50"
                     >
                       Cancel
