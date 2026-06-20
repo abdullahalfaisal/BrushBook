@@ -129,8 +129,7 @@ export default function BookingForm({ service }: { service: Service }) {
           <label htmlFor="city" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
             <MapPin className="h-3.5 w-3.5 text-stone-400" /> City
           </label>
-          <input id="city" name="city" autoComplete="address-level2" className={inputClass("city")} />
-          {fieldErrors.city && <p className="mt-1 text-xs text-red-500">{fieldErrors.city}</p>}
+          <input id="city" name="city" autoComplete="address-level2" className="mt-1.5 block w-full rounded-lg border border-stone-200 px-4 py-2.5 text-sm transition focus:border-brass focus:outline-none focus:ring-2 focus:ring-brass/30" />
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="address" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
@@ -143,8 +142,7 @@ export default function BookingForm({ service }: { service: Service }) {
           <label htmlFor="postal_code" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
             <MapPin className="h-3.5 w-3.5 text-stone-400" /> Postal Code
           </label>
-          <input id="postal_code" name="postal_code" autoComplete="postal-code" className={inputClass("postal_code")} />
-          {fieldErrors.postal_code && <p className="mt-1 text-xs text-red-500">{fieldErrors.postal_code}</p>}
+          <input id="postal_code" name="postal_code" autoComplete="postal-code" className="mt-1.5 block w-full rounded-lg border border-stone-200 px-4 py-2.5 text-sm transition focus:border-brass focus:outline-none focus:ring-2 focus:ring-brass/30" />
         </div>
         <div>
           <label htmlFor="date" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
@@ -157,8 +155,7 @@ export default function BookingForm({ service }: { service: Service }) {
           <label htmlFor="time" className="flex items-center gap-1.5 text-sm font-medium text-stone-700">
             <Clock className="h-3.5 w-3.5 text-stone-400" /> Preferred Time
           </label>
-          <input id="time" name="time" type="time" className={inputClass("time")} />
-          {fieldErrors.time && <p className="mt-1 text-xs text-red-500">{fieldErrors.time}</p>}
+          <input id="time" name="time" type="time" className="mt-1.5 block w-full rounded-lg border border-stone-200 px-4 py-2.5 text-sm transition focus:border-brass focus:outline-none focus:ring-2 focus:ring-brass/30" />
         </div>
       </div>
 
