@@ -5,7 +5,7 @@ import ServiceCard from "@/components/ServiceCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import Testimonials from "@/components/Testimonials"
 import GallerySection from "@/components/GallerySection"
-import { Shield, Star, Clock, ArrowRight, CheckCircle, ChevronDown, Home, ThumbsUp } from "lucide-react"
+import { Shield, Star, Clock, ArrowRight, ChevronDown, Home, ThumbsUp } from "lucide-react"
 
 export const dynamic = "force-dynamic"
 
@@ -74,12 +74,6 @@ export default async function HomePage() {
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto animate-pulse-glow"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="#services"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-3.5 text-sm font-medium text-white transition hover:bg-white/10"
-            >
-              View Our Services
             </Link>
           </div>
           <div className="animate-fade-up mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8" style={{ animationDelay: "0.3s" }}>
@@ -267,12 +261,6 @@ export default async function HomePage() {
                 className="inline-flex items-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl"
               >
                 Get Started <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="#services"
-                className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-8 py-3.5 text-sm font-medium text-stone-600 transition hover:bg-stone-100"
-              >
-                Browse Services
               </Link>
             </div>
           </div>
