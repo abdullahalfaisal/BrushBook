@@ -38,7 +38,7 @@ export default function Navbar() {
         </nav>
         <button
           onClick={() => setOpen(!open)}
-          className="sm:hidden"
+          className="sm:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 rounded-lg p-1"
           aria-label="Toggle menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import type { GalleryItem } from "@/lib/types"
 
@@ -19,15 +19,34 @@ export default function GallerySection() {
     load()
   }, [])
 
-  function prev() {
+  const prev = useCallback(() => {
     if (selected === null) return
     setSelected(selected === 0 ? items.length - 1 : selected - 1)
-  }
+  }, [selected, items.length])
 
-  function next() {
+  const next = useCallback(() => {
     if (selected === null) return
     setSelected(selected === items.length - 1 ? 0 : selected + 1)
-  }
+  }, [selected, items.length])
+
+  const close = useCallback(() => setSelected(null), [])
+
+  useEffect(() => {
+    if (selected === null) return
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "ArrowLeft") prev()
+      else if (e.key === "ArrowRight") next()
+      else if (e.key === "Escape") close()
+    }
+
+    document.addEventListener("keydown", onKeyDown)
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.removeEventListener("keydown", onKeyDown)
+      document.body.style.overflow = ""
+    }
+  }, [selected, prev, next, close])
 
   if (items.length === 0) return null
 
@@ -57,29 +76,33 @@ export default function GallerySection() {
       {selected !== null && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
-          onClick={() => setSelected(null)}
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery lightbox"
         >
           <button
-            onClick={() => setSelected(null)}
-            className="absolute right-4 top-4 text-white/60 transition hover:text-white"
+            onClick={close}
+            className="absolute right-4 top-4 text-white/60 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg p-1"
             aria-label="Close"
+            autoFocus
           >
             <X className="h-6 w-6" />
           </button>
-          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-white/40">
-            Click outside or press Esc to close
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-white/50">
+            {selected + 1} / {items.length} — Click outside or press Esc to close
           </span>
           <button
-            onClick={prev}
-            className="absolute left-4 text-white/60 transition hover:text-white"
-            aria-label="Previous"
+            onClick={(e) => { e.stopPropagation(); prev() }}
+            className="absolute left-4 text-white/60 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg p-1"
+            aria-label="Previous image"
           >
             <ChevronLeft className="h-8 w-8" />
           </button>
           <button
-            onClick={next}
-            className="absolute right-16 text-white/60 transition hover:text-white"
-            aria-label="Next"
+            onClick={(e) => { e.stopPropagation(); next() }}
+            className="absolute right-16 text-white/60 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg p-1"
+            aria-label="Next image"
           >
             <ChevronRight className="h-8 w-8" />
           </button>
