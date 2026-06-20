@@ -122,7 +122,7 @@ export default async function HomePage() {
               <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
                 Craftsmanship
               </span>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
                 Our Services
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-stone-500">
@@ -152,7 +152,7 @@ export default async function HomePage() {
                   <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 shadow-sm">
                     Our Work
                   </span>
-                  <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+                  <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
                     Recent Projects
                   </h2>
                   <p className="mt-3 text-stone-500">
@@ -176,7 +176,7 @@ export default async function HomePage() {
                 <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
                   Testimonials
                 </span>
-                <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+                <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
                   What Our Customers Say
                 </h2>
                 <p className="mx-auto mt-3 max-w-xl text-stone-500">
@@ -198,7 +198,7 @@ export default async function HomePage() {
               <span className="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500 shadow-sm">
                 Why Choose Us
               </span>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
                 Quality & Care
               </h2>
             </div>
@@ -228,7 +228,7 @@ export default async function HomePage() {
               <span className="inline-block rounded-full bg-stone-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-stone-500">
                 FAQ
               </span>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
                 Common Questions
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-stone-500">
@@ -255,7 +255,7 @@ export default async function HomePage() {
       <AnimatedSection>
         <section className="bg-cream py-20">
           <div className="mx-auto max-w-6xl px-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
               Ready to Transform Your Space?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-stone-500">
