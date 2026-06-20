@@ -4,7 +4,7 @@ import ServiceCard from "@/components/ServiceCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import Testimonials from "@/components/Testimonials"
 import GallerySection from "@/components/GallerySection"
-import { Shield, Star, Clock, ArrowRight, CheckCircle, ChevronDown } from "lucide-react"
+import { Shield, Star, Clock, ArrowRight, CheckCircle, ChevronDown, Home, ThumbsUp } from "lucide-react"
 
 export const dynamic = "force-dynamic"
 
@@ -44,25 +44,20 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-mid to-stone-800 text-white">
-        <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 text-center sm:pt-24">
-          <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-brass backdrop-blur-sm">
-              <CheckCircle className="h-3.5 w-3.5" /> Serving Portland & Surrounding Areas
-            </span>
-          </div>
-          <h1 className="animate-fade-up mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl" style={{ animationDelay: "0.1s" }}>
+      <section className="hero-noise relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-mid to-stone-800 text-white">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pb-20 pt-20 text-center sm:pt-24">
+          <h1 className="animate-fade-up text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Protect &amp; Beautify
             <br />
             <span className="text-shimmer">Your Home</span>
           </h1>
-          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-400" style={{ animationDelay: "0.2s" }}>
+          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-stone-400" style={{ animationDelay: "0.1s" }}>
             Professional interior and exterior painting. Premium Sherwin-Williams paint, meticulous prep, and a 2-year workmanship guarantee.
           </p>
-          <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.3s" }}>
+          <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.2s" }}>
             <Link
               href="/book/interior-painting"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto animate-pulse-glow"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
             </Link>
@@ -73,20 +68,32 @@ export default async function HomePage() {
               View Our Services
             </Link>
           </div>
-          <div className="animate-fade-up mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8" style={{ animationDelay: "0.4s" }}>
+          <div className="animate-fade-up mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-8" style={{ animationDelay: "0.3s" }}>
             <div className="text-center">
+              <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-brass">
+                <Home className="h-5 w-5" />
+              </div>
               <div className="text-2xl font-bold text-brass">500+</div>
               <div className="text-stone-400">Homes Painted</div>
             </div>
             <div className="text-center">
+              <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-brass">
+                <Clock className="h-5 w-5" />
+              </div>
               <div className="text-2xl font-bold text-brass">12</div>
               <div className="text-stone-400">Years Experience</div>
             </div>
             <div className="text-center">
+              <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-brass">
+                <ThumbsUp className="h-5 w-5" />
+              </div>
               <div className="text-2xl font-bold text-brass">98%</div>
               <div className="text-stone-400">Satisfaction Rate</div>
             </div>
             <div className="text-center">
+              <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-brass">
+                <Shield className="h-5 w-5" />
+              </div>
               <div className="text-2xl font-bold text-brass">2 yr</div>
               <div className="text-stone-400">Workmanship Warranty</div>
             </div>
