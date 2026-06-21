@@ -45,7 +45,7 @@ export default function AdminDashboardPage() {
             const diff = data.slice(0, data.length - prevCount.current)
             const names = diff.map((b: Booking) => b.customer_name).join(", ")
             setNotif(`New booking${diff.length > 1 ? "s" : ""} from ${names}`)
-            setTimeout(() => setNotif((n) => n === `New booking${diff.length > 1 ? "s" : ""} from ${names}` ? null : n), 6000)
+            setTimeout(() => setNotif((n) => n === `New booking${diff.length > 1 ? "s" : ""} from ${names}` ? null : n), 10000)
           }
           prevCount.current = data.length
           hasLoaded.current = true
@@ -99,7 +99,7 @@ export default function AdminDashboardPage() {
           setToast(null)
         },
       })
-      setTimeout(() => setToast(null), 5000)
+      setTimeout(() => setToast(null), 10000)
     }
   }
 
