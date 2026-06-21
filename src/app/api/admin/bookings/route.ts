@@ -67,7 +67,7 @@ export async function PATCH(req: Request) {
         `Time: ${data.preferred_time}`,
         `Address: ${data.address}, ${data.city} ${data.postal_code}`,
         ``,
-        `If you have any questions, feel free to reply to this email or call us.`,
+        `If you have any questions, feel free to reply to this email.`,
         ``,
         `Thanks,`,
         `The BrushBook Team`,
