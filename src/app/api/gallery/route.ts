@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server"
-import { getAdminSupabase } from "@/lib/supabase"
+import { getSupabase } from "@/lib/supabase"
 
 export async function GET() {
-  const supabase = getAdminSupabase()
+  const supabase = getSupabase()
   const { data, error } = await supabase
     .from("gallery")
     .select("*")
