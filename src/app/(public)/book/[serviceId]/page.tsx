@@ -13,12 +13,24 @@ export default async function BookPage({
   const { serviceId } = await params
 
   const supabase = getSupabase()
-  const { data: service } = await supabase
+
+  let { data: service } = await supabase
     .from("services")
     .select("*")
     .eq("id", serviceId)
     .eq("is_active", true)
     .single()
+
+  if (!service) {
+    const slug = serviceId.replace(/-/g, " ")
+    const { data: byName } = await supabase
+      .from("services")
+      .select("*")
+      .eq("is_active", true)
+      .ilike("name", slug)
+      .single()
+    service = byName
+  }
 
   if (!service) notFound()
 
