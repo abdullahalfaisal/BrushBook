@@ -12,9 +12,7 @@ export default function AdminLayout({
 }) {
   const router = useRouter()
   const pathname = usePathname()
-  const [authed] = useState<boolean>(() =>
-    typeof window !== "undefined" ? !!sessionStorage.getItem("admin_token") : false
-  )
+  const [authed, setAuthed] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [pinned, setPinned] = useState<boolean>(() =>
     typeof window !== "undefined" ? localStorage.getItem("admin_sidebar_pinned") === "true" : false
@@ -32,6 +30,7 @@ export default function AdminLayout({
     if (!token && pathname !== "/admin/login") {
       router.replace("/admin/login")
     }
+    setAuthed(!!token)
   }, [pathname, router])
 
   if (!authed && pathname !== "/admin/login") return null
