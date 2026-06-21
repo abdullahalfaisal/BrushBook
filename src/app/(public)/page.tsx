@@ -70,7 +70,7 @@ export default async function HomePage() {
           </p>
           <div className="animate-fade-up mt-8 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.2s" }}>
             <Link
-              href="/book/interior-painting"
+              href="/#services"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto animate-pulse-glow"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
@@ -257,7 +257,7 @@ export default async function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
-                href="/book/interior-painting"
+                href="/#services"
                 className="inline-flex items-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl"
               >
                 Get Started <ArrowRight className="h-4 w-4" />

@@ -31,7 +31,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/book/interior-painting"
+              href="/#services"
               className="rounded-full bg-brass px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-600 hover:shadow-md"
             >
               Book Now
@@ -75,7 +75,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/book/interior-painting"
+                href="/#services"
                 onClick={() => setOpen(false)}
                 className="mt-3 rounded-full bg-brass px-4 py-2.5 text-center text-sm font-semibold text-white"
               >
