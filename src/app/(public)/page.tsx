@@ -6,6 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection"
 import Testimonials from "@/components/Testimonials"
 import GallerySection from "@/components/GallerySection"
 import { Shield, Star, Clock, ArrowRight, ChevronDown, Home, ThumbsUp } from "lucide-react"
+import ContactSection from "@/components/ContactSection"
 
 export const dynamic = "force-dynamic"
 
@@ -70,7 +71,7 @@ export default async function HomePage() {
           </p>
           <div className="animate-fade-up mt-8 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.2s" }}>
             <Link
-              href="/#services"
+              href="/#contact"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl sm:w-auto animate-pulse-glow"
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
@@ -247,6 +248,10 @@ export default async function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection>
+        <ContactSection />
+      </AnimatedSection>
+
+      <AnimatedSection>
         <section className="bg-cream py-20">
           <div className="mx-auto max-w-6xl px-4 text-center">
             <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl">
@@ -257,7 +262,7 @@ export default async function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
-                href="/#services"
+                href="/#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-brass px-8 py-3.5 text-sm font-semibold text-brand-dark shadow-lg shadow-brass/30 transition hover:bg-white hover:shadow-xl"
               >
                 Get Started <ArrowRight className="h-4 w-4" />

@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/#portfolio", label: "Portfolio" },
   { href: "/#testimonials", label: "Testimonials" },
   { href: "/#why-us", label: "Why Us" },
+  { href: "/#contact", label: "Contact" },
 ]
 
 export default function Navbar() {
@@ -31,10 +32,10 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/#services"
+              href="/#contact"
               className="rounded-full bg-brass px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-600 hover:shadow-md"
             >
-              Book Now
+              Get a Quote
             </Link>
           </nav>
           <button
@@ -75,11 +76,11 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/#services"
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="mt-3 rounded-full bg-brass px-4 py-2.5 text-center text-sm font-semibold text-white"
               >
-                Book Now
+                Get a Quote
               </Link>
             </nav>
           </div>
